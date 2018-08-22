@@ -1,0 +1,23 @@
+{
+    "name": "pashaster12/laravel-crypto-stats",
+    "description": "Package allows to get the cryptocyrrency wallets information",
+    "keywords": ["laravel", "cryptocurrency", "wallet", "ethereum", "bitcoin", "litecoin", "dash", "zcash", "dogecoin", "ETH", "BTC", "LTC", "DOGE", "ZEC", "DOGE"],
+    "type": "library",
+    "require": {
+        "php": ">=7.1.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavel Basenko",
+            "email": "pashaster1207@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LaravelCryptoStats\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
