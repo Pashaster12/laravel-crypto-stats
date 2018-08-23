@@ -2,23 +2,12 @@
 
 namespace LaravelCryptoStats;
 
+use LaravelCryptoStats\Services\CurrencyManager;
 use Exception;
 
 class LaravelCryptoStats
 {
-    /**
-     * Service config instance
-     * 
-     * @var array 
-     */
-    private $config;
-    
-    /**
-     * Cryptocurrency of the created instance
-     * 
-     * @var string 
-     */
-    private $currency;
+    use CurrencyManager;
     
     /**
      * LaravelCryptoStats buider
@@ -26,26 +15,6 @@ class LaravelCryptoStats
     public function __construct()
     {
         $this->config = config('laravel_crypto_stats');
-    }
-    
-    /**
-     * Return the list of the cryptocurrencies defined n the config
-     * 
-     * @return array
-     */
-    public function getCurrencies()
-    {
-        return $this->config['currencies'];
-    }
-    
-    /**
-     * Set the value of the $currency variable
-     * 
-     * @param string $currency
-     */
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
     }
     
     /**

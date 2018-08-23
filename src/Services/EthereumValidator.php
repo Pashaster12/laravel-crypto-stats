@@ -4,7 +4,6 @@ namespace LaravelCryptoStats\Services;
 
 class EthereumValidator
 {
-
     /**
      * Checks if the given string is an address
      *

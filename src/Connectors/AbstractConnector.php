@@ -2,17 +2,13 @@
 
 namespace LaravelCryptoStats\Connectors;
 
+use LaravelCryptoStats\Services\CurrencyManager;
 use GuzzleHttp\Client;
 use Exception;
 
 abstract class AbstractConnector
 {
-    /**
-     * Service config instance
-     * 
-     * @var array 
-     */
-    protected $config;
+    use CurrencyManager;
     
     /**
      * Array of the cryptocurrencies supported 
@@ -35,14 +31,7 @@ abstract class AbstractConnector
      * @var string 
      */
     protected $api_description;
-    
-    /**
-     * Cryptocurrency for which fit API connector instance will be created
-     * 
-     * @var string 
-     */
-    protected $currency;
-    
+        
     /**
      * Prefix with the url of the corresponding block explorer 
      * for creating block link
@@ -56,10 +45,19 @@ abstract class AbstractConnector
      * 
      * Setting the $currency variable for accessing in the child classes
      */
-    public function __construct($currency)
+    public function __construct()
     {
         $this->config = config('laravel_crypto_stats');
-        
+    }
+    
+    /**
+     * Set the currency for the connector
+     * 
+     * @param string $currency
+     * @throws Exception
+     */
+    public function setCurrency(string $currency)
+    {
         if($currency) $this->currency = $currency;        
         else throw new Exception('Currency can not be empty!');
     }

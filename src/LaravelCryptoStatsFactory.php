@@ -2,7 +2,6 @@
 
 namespace LaravelCryptoStats;
 
-use LaravelCryptoStats\Services\ClassFinder;
 use Exception;
 
 class LaravelCryptoStatsFactory
@@ -21,10 +20,8 @@ class LaravelCryptoStatsFactory
      */
     public function __construct()
     {
-        $cf = new ClassFinder();
-        $classes = $cf->getClassesInNamespace(__NAMESPACE__ . '\Connectors');
-        
-        $this->connectors = $classes;
+        $connectors = app()->tagged('laravel-crypto-stats.connectors');        
+        $this->connectors = $connectors;
     }
         
     /**
@@ -42,18 +39,15 @@ class LaravelCryptoStatsFactory
             $instance = [];
 
             foreach ($connectors as $connector) {
-                $connector_instance = new $connector($currency);
-                $supported_currencies = array_merge($supported_currencies, $connector_instance->supported_currencies);
+                $connector->setCurrency($currency);                
+                $supported_currencies = array_merge($supported_currencies, $connector->supported_currencies);
 
-                if (in_array($currency, $connector_instance->supported_currencies))
-                    $instance = $connector_instance;
+                if (in_array($currency, $connector->supported_currencies)) $instance = $connector;
             }
 
-            if ($instance)
-                return $instance;
+            if ($instance) return $instance;
 
             $supported_currencies = implode(', ', $supported_currencies);
-
             throw new Exception('"' . $currency . '" cryptocurrency is not supported now! Currently available values: ' . $supported_currencies);
         }
     }
