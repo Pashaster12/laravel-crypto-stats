@@ -22,7 +22,7 @@
 	"extra": {
 	   "laravel": { 
 			"providers": [ "LaravelCryptoStats\\LaravelCryptoStatsProvider" ],
-			"aliases": { "DataTable": "LaravelCryptoStats\\LaravelCryptoStatsFacade" } 
+			"aliases": { "CryptoStat": "LaravelCryptoStats\\LaravelCryptoStatsFacade" } 
 		}
 	},
     "minimum-stability": "dev"
