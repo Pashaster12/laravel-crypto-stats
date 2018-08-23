@@ -2,8 +2,9 @@
 
 namespace LaravelCryptoStats;
 
-use LaravelCryptoStats\Connectors\{ChainsoConnector, EtherscanConnector};
 use Illuminate\Support\ServiceProvider;
+use LaravelCryptoStats\Connectors\ChainsoConnector;
+use LaravelCryptoStats\Connectors\EtherscanConnector;
 
 class LaravelCryptoStatsProvider extends ServiceProvider
 {
@@ -13,7 +14,7 @@ class LaravelCryptoStatsProvider extends ServiceProvider
      * @var bool
      */
     protected $defer = true;
-    
+
     /**
      * Bootstrap services.
      *
@@ -22,7 +23,7 @@ class LaravelCryptoStatsProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/laravel_crypto_stats.php' => config_path('laravel_crypto_stats.php'),
+            __DIR__.'/../config/laravel_crypto_stats.php' => config_path('laravel_crypto_stats.php'),
         ]);
     }
 
@@ -36,18 +37,18 @@ class LaravelCryptoStatsProvider extends ServiceProvider
         $this->app->bind('laravel-crypto-stats', function () {
             return new LaravelCryptoStats();
         });
-        
+
         $this->app->bind('chainso', function () {
             return new ChainsoConnector();
         });
-        
+
         $this->app->bind('etherscan', function () {
             return new EtherscanConnector();
         });
-        
+
         $this->app->tag(['chainso', 'etherscan'], 'laravel-crypto-stats.connectors');
     }
-    
+
     /**
      * Get the services provided by the provider.
      *
