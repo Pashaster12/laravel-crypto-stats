@@ -19,11 +19,13 @@
             "LaravelCryptoStats\\": "src/"
         }
     },	
-	"extra": {
-	   "laravel": { 
-			"providers": [ "LaravelCryptoStats\\LaravelCryptoStatsProvider" ],
-			"aliases": { "CryptoStat": "LaravelCryptoStats\\LaravelCryptoStatsFacade" } 
-		}
-	},
+    "extra": {
+        "laravel": { 
+            "providers": ["LaravelCryptoStats\\LaravelCryptoStatsProvider"],
+            "aliases": {
+                "CryptoStat": "LaravelCryptoStats\\LaravelCryptoStatsFacade"
+            } 
+        }
+    },
     "minimum-stability": "dev"
 }
