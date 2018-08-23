@@ -5,10 +5,12 @@ namespace LaravelCryptoStats\Services;
 class EthereumValidator
 {
     /**
-     * Checks if the given string is an address
+     * Checks if the given string is an address.
      *
      * @method isAddress
+     *
      * @param {String} $address the given HEX adress
+     *
      * @return {Boolean}
      */
     public static function isAddress($address)
@@ -26,10 +28,12 @@ class EthereumValidator
     }
 
     /**
-     * Checks if the given string is a checksummed address
+     * Checks if the given string is a checksummed address.
      *
      * @method isChecksumAddress
+     *
      * @param {String} $address the given HEX adress
+     *
      * @return {Boolean}
      */
     public static function isChecksumAddress($address)
@@ -46,7 +50,7 @@ class EthereumValidator
                 return false;
             }
         }
-        
+
         return true;
     }
 }
