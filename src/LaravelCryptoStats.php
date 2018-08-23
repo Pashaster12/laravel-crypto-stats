@@ -2,33 +2,34 @@
 
 namespace LaravelCryptoStats;
 
-use LaravelCryptoStats\Services\CurrencyManager;
 use Exception;
+use LaravelCryptoStats\Services\CurrencyManager;
 
 class LaravelCryptoStats
 {
     use CurrencyManager;
-    
+
     /**
-     * LaravelCryptoStats buider
+     * LaravelCryptoStats buider.
      */
     public function __construct()
     {
         $this->config = config('laravel_crypto_stats');
     }
-    
+
     /**
-     * Dynamically call the method of the API connector instance
+     * Dynamically call the method of the API connector instance.
      *
-     * @param  string  $method
-     * @param  array   $parameters
+     * @param string $method
+     * @param array  $parameters
+     *
      * @return mixed
      */
     public function __call($method, $parameters)
     {
-        if (!$this->currency)
+        if (!$this->currency) {
             throw new Exception('Currency can not be null! Call setCurrency() for setting it.');
-
+        }
         $factory = new LaravelCryptoStatsFactory();
         $instance = $factory->getInstance($this->currency);
 
