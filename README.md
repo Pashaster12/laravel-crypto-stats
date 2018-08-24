@@ -6,7 +6,7 @@
 [![License](https://poser.pugx.org/pashaster12/laravel-crypto-stats/license.svg)](https://packagist.org/packages/pashaster12/laravel-crypto-stats)
 [![Total Downloads](https://poser.pugx.org/pashaster12/laravel-crypto-stats/downloads.svg)](https://packagist.org/packages/pashaster12/laravel-crypto-stats)
 [![Latest Stable Version](http://img.shields.io/packagist/v/pashaster12/laravel-crypto-stats.svg)](https://packagist.org/packages/pashaster12/laravel-crypto-stats)
-<span class="badge-ehereum"><a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=3a00812160d43259f4138693715555fb59cdb04234599fe362b58493169e4801" title="Donate once-off to this project using Ethereum"><img src="https://img.shields.io/badge/ethereum-donate-blue.svg" alt="Ethereum donate button" /></a></span>
+<span class="badge-ehereum"><a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=0xf55b7BD86bc72b08427E7b5748E1eDD05f1AC8bd" title="Donate once-off to this project using Ethereum"><img src="https://img.shields.io/badge/ethereum-donate-blue.svg" alt="Ethereum donate button" /></a></span>
 
 This is a Laravel 5 package allows to get the cryptocyrrency wallets information. You can use it for monitoring wallets' information in different Laravel applications, for example, [like this](https://github.com/Pashaster12/cryptoStatsApp).
 
@@ -183,7 +183,7 @@ In the future the following features will planned and would be added:
 
 This package has been made with a lots of unsleeped nights and cups of coffee. So, I think, it would be fair to treat me a coffee if my work proved to be of use to you :blush:
 
-You can show your respect by sending **Ethereum** to this address: `3a00812160d43259f4138693715555fb59cdb04234599fe362b58493169e4801`
+You can show your respect by sending **Ethereum** to this address: `0xf55b7BD86bc72b08427E7b5748E1eDD05f1AC8bd`
 
 Or you can use `WebMoney` transactions to these wallets:
 
